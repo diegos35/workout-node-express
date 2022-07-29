@@ -7,15 +7,15 @@ const getAllWorkout = () => {
 }
 
 const createNewWorkout = (newWorkout) => {
-    const isAlready = DB.workouts.findIndex((workout) =>
-        workout.name === newWorkout.name 
-    )
+    const isAlready = DB.workouts.findIndex((workout) => workout.name === newWorkout.name) > -1
+    
+    console.log(isAlready);
     if (isAlready) {
         return;
     }
     DB.workouts.push(newWorkout);
     saveToDatabase(DB)
-
+    return newWorkout;
 }
 
 module.exports = {

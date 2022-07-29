@@ -9,6 +9,7 @@ const port = process.env.PORT || 3000;
 app.use(express.static(www));
 console.log(`serving ${www}`); */
 
+app.use(express.json());//middelware PARA PARSEAR LAS PETICIONES
 app.use('/api/v1/workouts', v1WorkoutRouter)
 
 
